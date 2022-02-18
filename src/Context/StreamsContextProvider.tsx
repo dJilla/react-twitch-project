@@ -75,7 +75,6 @@ useEffect(()=> {
     }, [faveGames, faveChannels, favorites])
 
 
-
     return (
 
         <StreamContext.Provider value={{faveGames, gamesList, setGames, addFaveGame, removeFaveGame, faveChannels, addFaveChannel, removeFaveChannel, favorites, addFave, removeFave}}>

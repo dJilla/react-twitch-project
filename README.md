@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 # SWITCH - Built in React/Typescript
 https://reactjs.org/docs/getting-started.html
 
@@ -29,6 +30,9 @@ This project was created by Britta Fountain, Ramiro Lynch and Dylan Lokatys in a
 -Clips/Clips search
 -Stream preview
 -Ability to login
+=======
+Group: Britta, Ramiro and Dylan
+>>>>>>> parent of 0212352... readme updated
 =======
 Group: Britta, Ramiro and Dylan
 >>>>>>> parent of 0212352... readme updated

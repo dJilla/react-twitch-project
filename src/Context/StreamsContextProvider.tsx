@@ -1,14 +1,15 @@
 import {  ReactNode, useEffect, useState } from "react";
-import { isTemplateSpan } from "typescript";
 import { Channel, Game, Stream, Streams } from "../Models/Stream";
 import { StreamContext } from "../Context/StreamsContext";
-
-
-
 
 interface Props {children:ReactNode;}
 
 export function StreamContextProvider({children}:Props) {
+
+
+
+// initial list of games
+const [gamesList, setGamesList] = useState<Game[]>([])
 
 
 //localStorage implementation
@@ -38,7 +39,8 @@ useEffect(()=> {
     localStorage.setItem('favedStreams', JSON.stringify(favorites));
     }, [faveGames, faveChannels, favorites])
 
-    
+
+// add and remove from favorites
 
 function addFave(stream:Stream) {
 
@@ -50,6 +52,7 @@ function removeFave(id:string) {
 
 }
 
+// add and remove faved Channels
 
 function addFaveChannel(channel:Channel) {
     setFaveChannels([...faveChannels,channel]);
@@ -60,14 +63,11 @@ function removeFaveChannel(id:string) {
 
 }
 
-const [gamesList, setGamesList] = useState<Game[]>([])
 
-
+// add and remove faved Games
 
 function addFaveGame(game:Game) {
-
-    setFaveGames([...faveGames,game]);
-    
+    setFaveGames([...faveGames,game]);  
 }
 
 function removeFaveGame(id:string) {
@@ -78,11 +78,6 @@ function setGames(games:Game[]){
     setGamesList(games)
 }
 
-useEffect(()=> {
-    localStorage.setItem('favedGames', JSON.stringify(faveGames));
-    localStorage.setItem('favedChannels', JSON.stringify(faveChannels));
-    localStorage.setItem('favedStreams', JSON.stringify(favorites));
-    }, [faveGames, faveChannels, favorites])
 
 
     return (

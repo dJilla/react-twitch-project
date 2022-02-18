@@ -22,7 +22,6 @@ The application is made up of 4 pages:
 
 On any page, a stream or game can be favorited and added to the user's list of favorites. The number of favorites is displayed in the header. Alternatively, you may navigate straight to a channel by clicking any thumbnail, title or 'Go to' button. Clicking the 'SWITCH' logo will navigate you to Twitch's home page.
 
-## About
 This project was created by Britta Fountain, Ramiro Lynch and Dylan Lokatys in about a week. Our biggest challenge was data organization and implementing this into our components. With more time the following features would be developed:
 
 -Embedded streams

@@ -19,7 +19,7 @@ export function FavoritesPage() {
    
     return(
 
-        <div className='favoritespage'>
+        <div>
 
             <div className='favorites'>
 

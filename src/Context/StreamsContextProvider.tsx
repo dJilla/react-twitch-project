@@ -12,12 +12,11 @@ export function StreamContextProvider({children}:Props) {
 
 
 
-const [favorites, setFavorites] = useState<Stream[]>(()=> {
-    const saved = localStorage.getItem('favedStreams') || '{}';
-    const initialValue = JSON.parse(saved);
-    return initialValue || [];
-})
-
+    const [favorites, setFavorites] = useState<Stream[]>(()=> {
+        const saved = localStorage.getItem('favedStreams') || '{}';
+        const initialValue = JSON.parse(saved);
+        return initialValue || [];
+    })
 // localStorage implementation
 const [faveGames, setFaveGames] = useState<Game[]>(()=> {
     const saved = localStorage.getItem('favedGames') || '{}';
@@ -32,13 +31,6 @@ const [faveChannels, setFaveChannels] = useState<Channel[]>(()=> {
     return initialValue || [];
 })
 
-useEffect(()=> {
-    localStorage.setItem('favedGames', JSON.stringify(faveGames));
-    localStorage.setItem('favedChannels', JSON.stringify(faveChannels));
-    localStorage.setItem('favedStreams', JSON.stringify(favorites));
-    }, [faveGames, faveChannels, favorites])
-
-    
 
 function addFave(stream:Stream) {
 
@@ -85,11 +77,7 @@ function setGames(games:Game[]){
     setGamesList(games)
 }
 
-useEffect(()=> {
-    localStorage.setItem('favedGames', JSON.stringify(faveGames));
-    localStorage.setItem('favedChannels', JSON.stringify(faveChannels));
-    localStorage.setItem('favedStreams', JSON.stringify(favorites));
-    }, [faveGames, faveChannels, favorites])
+
 
 
     return (
@@ -99,3 +87,4 @@ useEffect(()=> {
         </StreamContext.Provider>  
     );
 }
+

@@ -10,7 +10,7 @@ export function Header() {
     return (
 
         <div>
-            <h1><a target="_blank" href="https://www.twitch.tv/">SWITCH</a></h1> 
+            <h1><a target="_blank" href="https://www.twitch.tv/">Twitch</a></h1> 
             
             <div className="nav">
             <NavLink to='/'>Trending</NavLink>

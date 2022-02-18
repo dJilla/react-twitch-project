@@ -12,13 +12,12 @@ export function StreamContextProvider({children}:Props) {
 const [gamesList, setGamesList] = useState<Game[]>([])
 
 
-//localStorage implementation
+// localStorage implementation
 const [favorites, setFavorites] = useState<Stream[]>(()=> {
     const saved = localStorage.getItem('favedStreams') || '{}';
     const initialValue = JSON.parse(saved);
     return initialValue || [];
 })
-
 // localStorage implementation
 const [faveGames, setFaveGames] = useState<Game[]>(()=> {
     const saved = localStorage.getItem('favedGames') || '{}';
@@ -40,8 +39,7 @@ useEffect(()=> {
     }, [faveGames, faveChannels, favorites])
 
 
-// add and remove from favorites
-
+// add and remove faved Streams
 function addFave(stream:Stream) {
 
     setFavorites([...favorites,stream]);
@@ -66,6 +64,8 @@ function removeFaveChannel(id:string) {
 
 // add and remove faved Games
 
+
+
 function addFaveGame(game:Game) {
     setFaveGames([...faveGames,game]);  
 }
@@ -87,3 +87,4 @@ function setGames(games:Game[]){
         </StreamContext.Provider>  
     );
 }
+

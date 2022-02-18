@@ -51,12 +51,6 @@ function removeFave(id:string) {
 }
 
 
-const [faveChannels, setFaveChannels] = useState<Channel[]>(()=> {
-    const saved = localStorage.getItem('favedChannels') || '{}';
-    const initialValue = JSON.parse(saved);
-    return initialValue || [];
-})
-
 
 function addFaveChannel(channel:Channel) {
     setFaveChannels([...faveChannels,channel]);

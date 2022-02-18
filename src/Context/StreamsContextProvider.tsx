@@ -74,9 +74,6 @@ useEffect(()=> {
     localStorage.setItem('favedStreams', JSON.stringify(favorites));
     }, [faveGames, faveChannels, favorites])
 
-let favoriteStreams = JSON.parse(localStorage.getItem('favedStreams')|| '{}')
-let favoriteGames = JSON.parse(localStorage.getItem('favedGames')|| '{}')
-let favoriteChannels = JSON.parse(localStorage.getItem('favedChannels')|| '{}')
 
 
     return (

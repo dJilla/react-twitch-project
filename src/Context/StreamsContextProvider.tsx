@@ -7,7 +7,6 @@ interface Props {children:ReactNode;}
 export function StreamContextProvider({children}:Props) {
 
 
-
 // initial list of games
 const [gamesList, setGamesList] = useState<Game[]>([])
 
@@ -51,7 +50,6 @@ function removeFave(id:string) {
 }
 
 // add and remove faved Channels
-
 function addFaveChannel(channel:Channel) {
     setFaveChannels([...faveChannels,channel]);
 }
@@ -64,8 +62,6 @@ function removeFaveChannel(id:string) {
 
 // add and remove faved Games
 
-
-
 function addFaveGame(game:Game) {
     setFaveGames([...faveGames,game]);  
 }
@@ -77,7 +73,6 @@ function removeFaveGame(id:string) {
 function setGames(games:Game[]){
     setGamesList(games)
 }
-
 
 
     return (

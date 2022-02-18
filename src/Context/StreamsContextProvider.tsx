@@ -11,6 +11,10 @@ interface Props {children:ReactNode;}
 export function StreamContextProvider({children}:Props) {
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 9b648fd3ce0c8d9db460ef999d9e4e9b7e77084d
 const [favorites, setFavorites] = useState<Stream[]>(()=> {
     const saved = localStorage.getItem('favedStreams') || '{}';
     const initialValue = JSON.parse(saved);
@@ -28,13 +32,19 @@ function removeFave(id:string) {
 
 }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 9b648fd3ce0c8d9db460ef999d9e4e9b7e77084d
 const [faveChannels, setFaveChannels] = useState<Channel[]>(()=> {
     const saved = localStorage.getItem('favedChannels') || '{}';
     const initialValue = JSON.parse(saved);
     return initialValue || [];
 })
+<<<<<<< HEAD
 
+=======
+>>>>>>> 9b648fd3ce0c8d9db460ef999d9e4e9b7e77084d
 
 function addFaveChannel(channel:Channel) {
     setFaveChannels([...faveChannels,channel]);
@@ -53,6 +63,14 @@ const [faveGames, setFaveGames] = useState<Game[]>(()=> {
     return initialValue || [];
 })
 
+<<<<<<< HEAD
+=======
+useEffect(()=> {
+    localStorage.setItem('favedGames', JSON.stringify(faveGames));
+    localStorage.setItem('favedChannels', JSON.stringify(faveChannels));
+    localStorage.setItem('favedStreams', JSON.stringify(favorites));
+    }, [faveGames, faveChannels, favorites])
+>>>>>>> 9b648fd3ce0c8d9db460ef999d9e4e9b7e77084d
 
 function addFaveGame(game:Game) {
 

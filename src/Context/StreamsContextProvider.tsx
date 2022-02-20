@@ -14,20 +14,20 @@ const [gamesList, setGamesList] = useState<Game[]>([])
 
 // localStorage implementation
 const [favorites, setFavorites] = useState<Stream[]>(()=> {
-    const saved = localStorage.getItem('favedStreams') || '{}';
+    const saved = localStorage.getItem('favedStreams') || '[]';
     const initialValue = JSON.parse(saved);
     return initialValue || [];
 })
 // localStorage implementation
 const [faveGames, setFaveGames] = useState<Game[]>(()=> {
-    const saved = localStorage.getItem('favedGames') || '{}';
+    const saved = localStorage.getItem('favedGames') || '[]';
     const initialValue = JSON.parse(saved);
     return initialValue || [];
 })
 
 //localStorage implementation
 const [faveChannels, setFaveChannels] = useState<Channel[]>(()=> {
-    const saved = localStorage.getItem('favedChannels') || '{}';
+    const saved = localStorage.getItem('favedChannels') || '[]';
     const initialValue = JSON.parse(saved);
     return initialValue || [];
 })

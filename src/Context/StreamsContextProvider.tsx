@@ -1,6 +1,7 @@
 import {  ReactNode, useEffect, useState } from "react";
-import { Channel, Game, Stream, Streams } from "../Models/Stream";
+import { Channel, Game, Stream } from "../Models/Stream";
 import { StreamContext } from "../Context/StreamsContext";
+
 
 interface Props {children:ReactNode;}
 
@@ -13,20 +14,20 @@ const [gamesList, setGamesList] = useState<Game[]>([])
 
 // localStorage implementation
 const [favorites, setFavorites] = useState<Stream[]>(()=> {
-    const saved = localStorage.getItem('favedStreams') || '{}';
+    const saved = localStorage.getItem('favedStreams') || '[]';
     const initialValue = JSON.parse(saved);
     return initialValue || [];
 })
 // localStorage implementation
 const [faveGames, setFaveGames] = useState<Game[]>(()=> {
-    const saved = localStorage.getItem('favedGames') || '{}';
+    const saved = localStorage.getItem('favedGames') || '[]';
     const initialValue = JSON.parse(saved);
     return initialValue || [];
 })
 
 //localStorage implementation
 const [faveChannels, setFaveChannels] = useState<Channel[]>(()=> {
-    const saved = localStorage.getItem('favedChannels') || '{}';
+    const saved = localStorage.getItem('favedChannels') || '[]';
     const initialValue = JSON.parse(saved);
     return initialValue || [];
 })
@@ -45,7 +46,7 @@ function addFave(stream:Stream) {
 }
 
 function removeFave(id:string) {
-    setFavorites(favorites.filter((stream)=> stream.user_id != id));
+    setFavorites(favorites.filter((stream)=> stream.user_id !== id));
 
 }
 
@@ -55,7 +56,7 @@ function addFaveChannel(channel:Channel) {
 }
 
 function removeFaveChannel(id:string) {
-    setFaveChannels(faveChannels.filter((channel)=> channel.id != id));
+    setFaveChannels(faveChannels.filter((channel)=> channel.id !== id));
 
 }
 
@@ -67,7 +68,7 @@ function addFaveGame(game:Game) {
 }
 
 function removeFaveGame(id:string) {
-    setFaveGames(faveGames.filter((game)=> game.id != id));
+    setFaveGames(faveGames.filter((game)=> game.id !== id));
 }
 
 function setGames(games:Game[]){

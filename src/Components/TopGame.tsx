@@ -1,5 +1,4 @@
 import { useContext } from "react";
-import { isTemplateMiddle } from "typescript";
 import { StreamContext } from "../Context/StreamsContext";
 import { Game } from "../Models/Stream";
 
@@ -21,8 +20,8 @@ export function TopGame(props:{game:Game}) {
         <div className='topgamecontainer'>
             <ul>
                 <li className='topgame'>
-                    <a target="_blank" href={'https://www.twitch.tv/directory/game/' + props.game.name}>{props.game.name}</a>
-                    <a target="_blank" href={'https://www.twitch.tv/directory/game/' + props.game.name}><img src={(props.game.box_art_url).replace('{width}', '155').replace('{height}', '204')}/></a>
+                    <a target="_blank" rel="noreferrer" href={'https://www.twitch.tv/directory/game/' + props.game.name}>{props.game.name}</a>
+                    <a target="_blank" rel="noreferrer" href={'https://www.twitch.tv/directory/game/' + props.game.name}><img alt='game box art' src={(props.game.box_art_url).replace('{width}', '155').replace('{height}', '204')}/></a>
                 </li>
             </ul>
 

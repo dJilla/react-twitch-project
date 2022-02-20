@@ -1,7 +1,7 @@
 import axios from "axios";
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect } from "react";
 import { StreamContext } from "../Context/StreamsContext";
-import { Game, Games } from "../Models/Stream";
+import { Games } from "../Models/Stream";
 import { TopGame } from "./TopGame";
 const accessToken = process.env.REACT_APP_TWITCH_ACCESS_TOKEN || '';
 const clientID = process.env.REACT_APP_TWITCH_CLIENT_ID || '';

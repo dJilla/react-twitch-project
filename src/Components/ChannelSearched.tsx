@@ -28,12 +28,12 @@ export function ChannelSearched(props:{channel:Channel}) {
                 <li>{props.channel.title}</li> 
     
                 <li className={props.channel.is_live === false ? 'offline' : 'live'}>{props.channel.is_live === false ? 'OFFLINE' : 'LIVE'}</li>
-                <li><img src={(props.channel.thumbnail_url)}/></li>
+                <li><img alt='thumbnail url' src={(props.channel.thumbnail_url)}/></li>
             </ul>
 
             <div className='center'>
 
-            <button> <a target="_blank" href={'https://www.twitch.tv/' + props.channel.broadcaster_login}>Watch {props.channel.game_name} now!</a>  </button>
+            <button> <a target="_blank" rel="noreferrer" href={'https://www.twitch.tv/' + props.channel.broadcaster_login}>Watch {props.channel.game_name} now!</a>  </button>
 
             {checkFavorites() === false ? <button className='notliked' onClick={()=> { addFaveChannel(props.channel)}}><span className={'material-icons-outlined'}>favorite</span></button> : <button className='liked' onClick={()=> { removeFaveChannel(props.channel.id)}}><span className={'material-icons-outlined'}>favorite</span></button> }
             </div>

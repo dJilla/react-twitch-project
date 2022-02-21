@@ -10,7 +10,7 @@ export function TrendingPage() {
 
     useEffect(() => {
         fetchTopStreams().then(response =>  setTopStreams(response.data));
-    })
+    },[])
 
     return(
 

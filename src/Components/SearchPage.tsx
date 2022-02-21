@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { fetchTopStreams, searchChannels } from "../Service/TwitchApi";
-import { Channel, Stream, Streams } from "../Models/Stream";
+import { searchChannels } from "../Service/TwitchApi";
+import { Channel } from "../Models/Stream";
 import { ChannelSearched } from "./ChannelSearched";
 
 export function SearchPage() {

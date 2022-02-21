@@ -1,11 +1,11 @@
 import {  ReactNode, useEffect, useState } from "react";
-import { Channel, Game, Stream, Streams } from "../Models/Stream";
+import { Channel, Game, Stream } from "../Models/Stream";
 import { StreamContext } from "../Context/StreamsContext";
+
 
 interface Props {children:ReactNode;}
 
 export function StreamContextProvider({children}:Props) {
-
 
 
 // initial list of games
@@ -46,38 +46,34 @@ function addFave(stream:Stream) {
 }
 
 function removeFave(id:string) {
-    setFavorites(favorites.filter((stream)=> stream.user_id != id));
+    setFavorites(favorites.filter((stream)=> stream.user_id !== id));
 
 }
 
 // add and remove faved Channels
-
 function addFaveChannel(channel:Channel) {
     setFaveChannels([...faveChannels,channel]);
 }
 
 function removeFaveChannel(id:string) {
-    setFaveChannels(faveChannels.filter((channel)=> channel.id != id));
+    setFaveChannels(faveChannels.filter((channel)=> channel.id !== id));
 
 }
 
 
 // add and remove faved Games
 
-
-
 function addFaveGame(game:Game) {
     setFaveGames([...faveGames,game]);  
 }
 
 function removeFaveGame(id:string) {
-    setFaveGames(faveGames.filter((game)=> game.id != id));
+    setFaveGames(faveGames.filter((game)=> game.id !== id));
 }
 
 function setGames(games:Game[]){
     setGamesList(games)
 }
-
 
 
     return (

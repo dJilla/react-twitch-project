@@ -1,6 +1,5 @@
-import { Streams, Stream, Channel, Game } from "../Models/Stream";
+import { Stream, Channel, Game } from "../Models/Stream";
 import { createContext} from 'react';
-import { StringifyOptions } from "querystring";
 
 
 export interface StreamContextModel {

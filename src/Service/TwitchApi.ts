@@ -1,8 +1,6 @@
 import axios from 'axios';
-import { useContext, useEffect, useState } from 'react';
-import { setSyntheticLeadingComments } from 'typescript';
-import { StreamContext } from '../Context/StreamsContext';
-import { Games, Searched, Stream, Streams } from '../Models/Stream';
+
+import {Searched, Streams } from '../Models/Stream';
 
 const accessToken = process.env.REACT_APP_TWITCH_ACCESS_TOKEN || '';
 const clientID = process.env.REACT_APP_TWITCH_CLIENT_ID || '';
